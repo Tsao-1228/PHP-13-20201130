@@ -38,3 +38,5 @@
     echo sha1(sha1($pw));
     echo "<br>";
     echo sha1(md5($pw));
+    //https://www.cmd5.com/
+    //https://www.php.net/manual/en/ref.strings.php
