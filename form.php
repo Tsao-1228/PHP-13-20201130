@@ -19,6 +19,15 @@
             <label for="phone">電話</label>
             <input type="text" id="phone" name="phone">
         </div>
+        <div>
+            <label for="gender">性別</label>
+
+            <input type="radio" name="gender" id="male" value="男">
+            <label for="male">男</label>
+
+            <input type="radio" name="gender" id="female" value="女">
+            <label for="female">女</label>
+        </div>
         <input type="submit" value="送出">
     </form>
 </body>
