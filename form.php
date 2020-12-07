@@ -50,6 +50,10 @@
                 <option value="研究所以上">研究所以上</option>
             </select>
         </div>
+        <div>
+            <label for="content">內容</label>
+            <textarea name="content" id="content" cols="60" rows="20"></textarea>
+        </div>
         <input type="submit" value="送出">
     </form>
 </body>

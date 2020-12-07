@@ -26,6 +26,7 @@
     echo $gender."<br>";
     echo $skills."<br>";
     echo $edu."<br>";
+    echo nl2br($content)."<br>";
     
 
 
