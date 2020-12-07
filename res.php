@@ -17,5 +17,10 @@
     extract($_POST);
     // extract($_GET);
 
-    echo $name,$email,$phone.$gender;
+    var_dump($skills);
+    $skills = implode(",",$skills);
+
+    echo $name,$email,$phone,$gender,$skills;
+
+
     
