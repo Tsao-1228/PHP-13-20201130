@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="res.php" method="post">
         <div>
             <label for="name">姓名</label>
             <input type="text" id="name" name="name">
@@ -14,6 +14,10 @@
         <div>
             <label for="email">Email</label>
             <input type="text" id="email" name="email">
+        </div>
+        <div>
+            <label for="phone">電話</label>
+            <input type="text" id="phone" name="phone">
         </div>
         <input type="submit" value="送出">
     </form>
