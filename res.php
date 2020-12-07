@@ -18,15 +18,27 @@
     // extract($_GET);
 
     // var_dump($skills);
-    $skills = implode(",",$skills);
+    // $skills = implode(",",$skills);
 
-    echo $name."<br>";
-    echo $email."<br>";
-    echo $phone."<br>";
-    echo $gender."<br>";
-    echo $skills."<br>";
-    echo $edu."<br>";
-    echo nl2br($content)."<br>";
+    // echo $name."<br>";
+    // echo $email."<br>";
+    // echo $phone."<br>";
+    // echo $gender."<br>";
+    // echo $skills."<br>";
+    // echo $edu."<br>";
+    // echo nl2br($content)."<br>";
+
+
+    // var_dump($gender);
+    // if($gender == null){
+    //     echo "請選擇性別";
+    // }
+    // !$gender
+    if(!isset($gender)){
+        echo "請選擇性別";
+    }else{
+        echo $gender;
+    }
     
 
 
