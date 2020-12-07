@@ -1,5 +1,5 @@
 <?php
-    var_dump($_POST);
+    // var_dump($_POST);
     // var_dump($_GET);
 
     // echo "<br>";
@@ -17,10 +17,16 @@
     extract($_POST);
     // extract($_GET);
 
-    var_dump($skills);
+    // var_dump($skills);
     $skills = implode(",",$skills);
 
-    echo $name,$email,$phone,$gender,$skills;
+    echo $name."<br>";
+    echo $email."<br>";
+    echo $phone."<br>";
+    echo $gender."<br>";
+    echo $skills."<br>";
+    echo $edu."<br>";
+    
 
 
     

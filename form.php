@@ -40,6 +40,16 @@
             <input type="checkbox" name="skills[]" id="premiere" value="影片剪輯">
             <label for="premiere">影片剪輯</label>
         </div>
+        <div>
+            <label for="edu">學歷</label>
+            <select name="edu" id="edu">
+                <option value="國小">國小</option>
+                <option value="國中">國中</option>
+                <option value="高中職">高中職</option>
+                <option value="大專院校">大專院校</option>
+                <option value="研究所以上">研究所以上</option>
+            </select>
+        </div>
         <input type="submit" value="送出">
     </form>
 </body>
