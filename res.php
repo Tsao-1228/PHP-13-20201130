@@ -34,6 +34,19 @@
     //     echo "請選擇性別";
     // }
     // !$gender
+
+    if($name == ""){
+        echo "請輸入姓名";
+    }
+    if($email == ""){
+        echo "請輸入Email";
+    }
+    if($phone == ""){
+        echo "請輸入電話";
+    }
+
+
+
     if(!isset($gender)){
         echo "請選擇性別";
     }else{
