@@ -35,10 +35,13 @@
     // }
     // !$gender
 
-    if($name == ""){
+    if($name == "" || ctype_space($name)){
         echo "請輸入姓名";
+    }else{
+        echo trim($name);
     }
-    if($email == ""){
+
+    if($email == "" || ctype_space($name)){
         echo "請輸入Email";
     }
     if($phone == ""){
@@ -52,7 +55,13 @@
     }else{
         echo $gender;
     }
-    
 
+    if(!isset($skills)){
+        echo "請選擇至少一樣專長";
+    }else{
+        echo implode(",",$skills);
+    }
+    
+    var_dump($edu);
 
     
