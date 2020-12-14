@@ -39,6 +39,7 @@
             <th>性別</th>
             <th>學歷</th>
             <th>專長</th>
+            <th></th>
         </tr>
     <?php
         // while($row = mysqli_fetch_assoc($result)){
@@ -62,6 +63,12 @@
             <td><?php echo $row["gender"];?></td>
             <td><?php echo $row["edu"];?></td>
             <td><?php echo $row["skills"];?></td>
+            <td>
+                <form action="delete.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $row["id"];?>">
+                    <input type="submit" value="刪除">
+                </form>
+            </td>
         </tr>
     <?php } ?>
 
