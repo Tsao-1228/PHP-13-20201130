@@ -1,13 +1,13 @@
 <?php
-    require_once("conn.php");
-
-    $sql = "SELECT * FROM students";
-    $result = mysqli_query($conn,$sql);
-
-    // $row = mysqli_fetch_assoc($result); //關聯陣列
-    // $row = mysqli_fetch_array($result); //關聯陣列與一班陣列
-    // $row = mysqli_fetch_row($result); //一般陣列
-
+    try {
+        require_once("pdo.php");
+        $sql = "SELECT * FROM students";
+        //預備陳述式
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
 
 ?>
 <!DOCTYPE html>
@@ -41,20 +41,7 @@
             <th>專長</th>
             <th></th>
         </tr>
-    <?php
-        // while($row = mysqli_fetch_assoc($result)){
-        //     echo "<tr>";
-        //     echo "<td>{$row["id"]}</td>";
-        //     echo "<td>{$row["name"]}</td>";
-        //     echo "<td>{$row["email"]}</td>";
-        //     echo "<td>{$row["phone"]}</td>";
-        //     echo "<td>{$row["gender"]}</td>";
-        //     echo "<td>{$row["edu"]}</td>";
-        //     echo "<td>{$row["skills"]}</td>";
-        //     echo "</tr>";
-        // }    
-    ?>
-    <?php while($row = mysqli_fetch_assoc($result)){ ?> 
+    <?php while($row = $stmt->fetch()){ ?> 
         <tr>
             <td><?php echo $row["id"];?></td>
             <td><?php echo $row["name"];?></td>
