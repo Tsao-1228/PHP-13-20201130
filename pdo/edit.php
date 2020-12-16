@@ -1,9 +1,15 @@
 <?php
-    require_once("conn.php");
-    extract($_GET);
-    $sql = "SELECT * FROM students WHERE id = {$id}";
-    $result = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_assoc($result);
+    try{
+        require_once("pdo.php");
+        extract($_GET);
+        $sql = "SELECT * FROM students WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
