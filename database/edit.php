@@ -13,7 +13,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="store.php" method="post">
+    <form action="update.php" method="post">
         <div>
             <label for="name">姓名</label>
             <input type="text" id="name" name="name" value="<?php echo $row["name"];?>">
@@ -65,6 +65,7 @@
             <label for="content">內容</label>
             <textarea name="content" id="content" cols="60" rows="20"><?php echo $row["content"];?></textarea>
         </div>
+        <input type="hidden" name="id" value="<?php echo $row["id"];?>">
         <input type="submit" value="送出">
         <input type="button" value="取消" onclick="history.back()">
     </form>
