@@ -41,7 +41,12 @@
             <th>專長</th>
             <th></th>
         </tr>
-    <?php while($row = $stmt->fetch()){ ?> 
+    <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ ?>
+    <?php
+        // PDO::FETCH_ASSOC
+        // PDO::FETCH_NUM
+        // PDO::FETCH_BOTH
+    ?> 
         <tr>
             <td><?php echo $row["id"];?></td>
             <td><?php echo $row["name"];?></td>
