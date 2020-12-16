@@ -36,15 +36,18 @@
             <label for="female">女</label>
         </div>
         <div>
+            <?php
+                $skills = explode(",",$row["skills"]);
+            ?>
             <label for="skills">專長</label>
 
-            <input type="checkbox" name="skills[]" id="design" value="平面設計">
+            <input type="checkbox" name="skills[]" id="design" value="平面設計" <?php echo in_array("平面設計",$skills)?"checked":""; ?>>
             <label for="design">平面設計</label>
 
-            <input type="checkbox" name="skills[]" id="web" value="網頁設計">
+            <input type="checkbox" name="skills[]" id="web" value="網頁設計" <?php echo in_array("網頁設計",$skills)?"checked":""; ?>>
             <label for="web">網頁設計</label>
 
-            <input type="checkbox" name="skills[]" id="premiere" value="影片剪輯">
+            <input type="checkbox" name="skills[]" id="premiere" value="影片剪輯" <?php echo in_array("影片剪輯",$skills)?"checked":""; ?>>
             <label for="premiere">影片剪輯</label>
         </div>
         <div>
