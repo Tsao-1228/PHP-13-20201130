@@ -10,6 +10,16 @@
         <input type="file" name="img">
         <input type="submit" value="上傳">
     </form>
-    <?php echo uniqid(); ?>
+    <div>
+        <?php
+            $imgs = glob("images/*");
+            // var_dump($imgs);
+            foreach($imgs as $img){
+        ?>
+        <img src="<?php echo $img; ?>" width="200">
+        <?php
+            }
+        ?>
+    </div>
 </body>
 </html>
