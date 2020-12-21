@@ -15,6 +15,19 @@
             echo $e->getMessage();
         }
     }
+    function show($get){
+        try{
+            require_once("pdo.php");
+            extract($get);
+            $sql = "SELECT * FROM students WHERE id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$id]);
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $row;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
     function store($post){
         try {
             require_once("pdo.php");
