@@ -7,9 +7,24 @@
     // $_FILES["img"]["tmp_name"]
     // $_FILES["img"]["type"]
 
-    $img_name = md5(time());
-    $target = "images/{$img_name}";
+    // $img_name = md5(time());
     
+    switch($type){
+        case "image/jpeg":
+            $img_name = md5(uniqid()).".jpg";
+            break;
+        case "image/png":
+            $img_name = md5(uniqid()).".png";
+            break;
+        case "image/gif":
+            $img_name = md5(uniqid()).".gif";
+            break;
+        default:
+            echo "請上傳正確的檔案類型";
+            return ;
+    }
+    $target = "images/{$img_name}";
+
     if($error == 0){
         if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
