@@ -23,8 +23,11 @@
             echo "請上傳正確的檔案類型";
             return ;
     }
+    if(!is_dir("images")){
+        mkdir("images");
+    }
+    
     $target = "images/{$img_name}";
-
     if($error == 0){
         if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
