@@ -17,6 +17,10 @@
             foreach($imgs as $img){
         ?>
         <img src="<?php echo $img; ?>" width="200">
+        <form action="delete.php" method="post">
+            <input type="hidden" name="img" value="<?php echo $img; ?>">
+            <input type="submit" value="刪除">
+        </form>
         <?php
             }
         ?>
