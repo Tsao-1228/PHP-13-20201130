@@ -1,3 +1,7 @@
+<?php
+    require_once("function.php");
+    $rows = showAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +16,11 @@
     </form>
     <div>
         <?php
-            $imgs = glob("images/*");
-            // var_dump($imgs);
-            foreach($imgs as $img){
+            foreach($rows as $row){
         ?>
-        <img src="<?php echo $img; ?>" width="200">
+        <img src="images/<?php echo $row["img_name"]; ?>" width="200">
         <form action="delete.php" method="post">
-            <input type="hidden" name="img" value="<?php echo $img; ?>">
+            <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
             <input type="submit" value="刪除">
         </form>
         <?php
