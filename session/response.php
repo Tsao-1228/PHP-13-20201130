@@ -4,6 +4,6 @@
     
     $_SESSION["USER"] = $user;
 
-    echo $_SESSION["USER"];
+    echo "Session已新增";
 
     header("Refresh:3;url=index.php");

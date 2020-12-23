@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +9,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="response.php" method="post">
-        <input type="text" name="user">
-        <input type="submit">
-    </form>
+    <?php if($_SESSION){ ?>
+    
+        <div><?php echo $_SESSION["USER"]; ?></div>
+        <a href="delete.php">刪除Session</a>
 
-    <?php
-        session_start();
-        if($_SESSION["USER"]){
-            echo $_SESSION["USER"];
-        }
+    <?php }else{ ?>
 
-    ?>
+        <form action="response.php" method="post">
+            <input type="text" name="user">
+            <input type="submit" value="新增Session">
+        </form>
+
+    <?php } ?>
 </body>
 </html>
