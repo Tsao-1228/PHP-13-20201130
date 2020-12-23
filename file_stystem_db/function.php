@@ -25,10 +25,17 @@
         if($error == 0){
             if(move_uploaded_file($tmp_name,$target)){
                 echo "上傳成功";
+                return $img_name;
             }else{
                 echo "上傳失敗";
             }
         }else{
             echo "上船錯誤";
         }
+    }
+    function store($img_name){
+        require_once("pdo.php");
+        $sql = "INSERT INTO photos(img_name)VALUES(?)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$img_name]);
     }

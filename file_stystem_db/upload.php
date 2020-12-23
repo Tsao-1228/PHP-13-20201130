@@ -1,7 +1,10 @@
 <?php
    require_once("function.php");
-   uploadIMG($_FILES);
-
+   
+   if($img_name = uploadIMG($_FILES)){
+      store($img_name);
+   }
+   
    header("refresh:3;url=index.php");
 
 
