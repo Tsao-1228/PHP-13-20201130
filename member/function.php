@@ -4,7 +4,7 @@
             session_start();
             require_once("pdo.php");
             extract($post);
-            if($user=="" || $pw =""){
+            if($user=="" || $pw ==""){
                 return 2;
             }
             $sql = "SELECT * FROM users WHERE user = ?";
