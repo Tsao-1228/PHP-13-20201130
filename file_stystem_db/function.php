@@ -55,3 +55,12 @@
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$img_name]);
     }
+    function delete($post){
+        require_once("pdo.php");
+        extract($post);
+        unlink("images/{$img_name}");
+        
+        $sql = "DELETE FROM photos WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+    }

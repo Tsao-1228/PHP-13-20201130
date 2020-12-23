@@ -20,6 +20,7 @@
         ?>
         <img src="images/<?php echo $row["img_name"]; ?>" width="200">
         <form action="delete.php" method="post">
+            <input type="hidden" name="img_name" value="<?php echo $row["img_name"];?>">
             <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
             <input type="submit" value="刪除">
         </form>
