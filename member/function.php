@@ -30,3 +30,15 @@
         session_start();
         session_destroy();
     }
+    function register($post){
+        try {
+            extract($post);
+            require_once("pdo.php");
+            $sql = "INSERT INTO users(user,pw)VALUES(?,?)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$user,$pw]);
+
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }

@@ -14,6 +14,7 @@
         <a href="logout.php">登出</a>
     <?php }else{ ?>
         <h2>訪客你好</h2>
+        <a href="register.php">申請會員</a>
         <form action="auth.php" method="post">
             <div>
                 <label>帳號</label>   
