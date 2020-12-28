@@ -11,6 +11,7 @@
 <body>
     <?php if(isset($_SESSION["AUTH"])){ ?>
         <h2><?php echo $_SESSION["AUTH"]["user"]; ?> 你好</h2>
+        <a href="member.php">會員資料</a>
         <a href="logout.php">登出</a>
     <?php }else{ ?>
         <h2>訪客你好</h2>

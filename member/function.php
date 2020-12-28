@@ -28,7 +28,8 @@
     }
     function logout(){
         session_start();
-        session_destroy();
+        // session_destroy();
+        unset($_SESSION["AUTH"]);
     }
     function register($post){
         try {
@@ -49,5 +50,11 @@
 
         }catch(PDOException $e){
             echo $e->getMessage();
+        }
+    }
+    function access_denied(){
+        session_start();
+        if(!$_SESSION["AUTH"]){
+            header("location:index.php");
         }
     }
