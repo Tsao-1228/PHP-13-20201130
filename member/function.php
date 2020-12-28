@@ -12,11 +12,9 @@
             $stmt->execute([$user]);
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             
-            // if(!$row){
-            //     return 1;
-            // }
-
-            return $row ? "":1;
+            if(!$row){
+                return 1;
+            }
             
             if($row["pw"] === $pw){
                 $_SESSION["AUTH"] = $row;
