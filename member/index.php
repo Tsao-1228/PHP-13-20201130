@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +9,14 @@
     <title>Document</title>
 </head>
 <body>
+    <?php if(isset($_SESSION["AUTH"])){ ?>
+        <h1>已登入</h1>
+    <?php }else{ ?>
+        <h1>
+            已登出
+        </h1>
+    <?php } ?>
+        
     <form action="auth.php" method="post">
         <div>
             <label>帳號</label>   
