@@ -10,23 +10,23 @@
 </head>
 <body>
     <?php if(isset($_SESSION["AUTH"])){ ?>
-        <h1>已登入</h1>
+        <h2><?php echo $_SESSION["AUTH"]["user"]; ?> 你好</h2>
+        <a href="logout.php">登出</a>
     <?php }else{ ?>
-        <h1>
-            已登出
-        </h1>
+        <h2>訪客你好</h2>
+        <form action="auth.php" method="post">
+            <div>
+                <label>帳號</label>   
+                <input type="text" name="user">
+            </div>
+            <div>
+                <label>密碼</label>   
+                <input type="password" name="pw">
+            </div>
+            <input type="submit" value="登入">
+        </form>
     <?php } ?>
         
-    <form action="auth.php" method="post">
-        <div>
-            <label>帳號</label>   
-            <input type="text" name="user">
-        </div>
-        <div>
-            <label>密碼</label>   
-            <input type="password" name="pw">
-        </div>
-        <input type="submit" value="登入">
-    </form>
+    
 </body>
 </html>
